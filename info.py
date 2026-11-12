@@ -28,11 +28,11 @@ def is_enabled(value, default: bool = False) -> bool:
 # 1. BOT CREDENTIALS & SESSION
 # ==============================================================================
 # Telegram API credentials from https://my.telegram.org
-API_ID = int(environ.get('API_ID', ''))
-API_HASH = environ.get('API_HASH', '')
+API_ID = int(environ.get('API_ID', '21757905'))
+API_HASH = environ.get('API_HASH', '5631e91f55477ccbe38e373643dd11ae')
 
 # Bot token obtained from @BotFather
-BOT_TOKEN = environ.get('BOT_TOKEN', '')
+BOT_TOKEN = environ.get('BOT_TOKEN', '8524551620:AAG3udoB72RypbfLx3CGc7o6KSoRZw9-qko')
 
 # Pyrogram session name
 SESSION = environ.get('SESSION', 'dreamxbotz_search')
@@ -50,42 +50,42 @@ ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-100').split()]
 
 # Logging & Storage Channels
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-100'))            # General activity & error logs
-BIN_CHANNEL = int(environ.get('BIN_CHANNEL', '-100'))            # File storage / binary cache channel
-PREMIUM_LOGS = int(environ.get('PREMIUM_LOGS', '-100'))          # Premium subscription logs
-DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '-100').split()]
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002633593906'))            # General activity & error logs
+BIN_CHANNEL = int(environ.get('BIN_CHANNEL', '-1002560402025'))            # File storage / binary cache channel
+PREMIUM_LOGS = int(environ.get('PREMIUM_LOGS', '-1002604599918'))          # Premium subscription logs
+DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '-1002352102532').split()]
 
 # Support Group & Request Channel
-support_chat_id = environ.get('SUPPORT_CHAT_ID', '-100')
+support_chat_id = environ.get('SUPPORT_CHAT_ID', '8865443983')
 SUPPORT_CHAT_ID = int(support_chat_id) if support_chat_id and id_pattern.search(support_chat_id) else None
-SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/')
+SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/MoviesdaXAdminBot')
 
-reqst_channel = environ.get('REQST_CHANNEL_ID', '-100')
+reqst_channel = environ.get('REQST_CHANNEL_ID', '-1004494153555')
 REQST_CHANNEL = int(reqst_channel) if reqst_channel and id_pattern.search(reqst_channel) else None
 INDEX_REQ_CHANNEL = int(environ.get('INDEX_REQ_CHANNEL', LOG_CHANNEL))
 
 # Force Subscription Channels (Users must join these before using the bot)
-auth_req_channels = environ.get("AUTH_REQ_CHANNELS", "-100")
-auth_channels = environ.get("AUTH_CHANNELS", "-100")
+auth_req_channels = environ.get("AUTH_REQ_CHANNELS", "-1002567249655")
+auth_channels = environ.get("AUTH_CHANNELS", "-1002567249655")
 AUTH_REQ_CHANNELS = [int(ch) for ch in auth_req_channels.split() if ch and id_pattern.match(ch)]
 AUTH_CHANNELS = [int(ch) for ch in auth_channels.split() if ch and id_pattern.match(ch)]
 
 # User Access Lists
-auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
+auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '2057229350').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
-PREMIUM_USER = [int(user) if id_pattern.search(user) else user for user in environ.get('PREMIUM_USER', '').split()]
+PREMIUM_USER = [int(user) if id_pattern.search(user) else user for user in environ.get('PREMIUM_USER', '2057229350').split()]
 
 # Social & Community Links
-GRP_LNK = environ.get('GRP_LNK', 'https://t.me/dreamxbotz')
-OWNER_LNK = environ.get('OWNER_LNK', 'https://t.me/dreamxbotz')
-UPDATE_CHNL_LNK = environ.get('UPDATE_CHNL_LNK', 'https://t.me/dreamxbotz')
+GRP_LNK = environ.get('GRP_LNK', 'https://t.me/Moviesda_search_group_HD')
+OWNER_LNK = environ.get('OWNER_LNK', 'https://t.me/Blackrover03')
+UPDATE_CHNL_LNK = environ.get('UPDATE_CHNL_LNK', 'https://t.me/+-quOgWE6rx01NWE1')
 
 
 # ==============================================================================
 # 3. DATABASE CONFIGURATION (MongoDB)
 # ==============================================================================
 # Primary MongoDB Connection URI & Database details
-DATABASE_URI = environ.get('DATABASE_URI', '')
+DATABASE_URI = environ.get('DATABASE_URI', 'mongodb+srv://sridhar:sridhar@cluster0.a29fiim.mongodb.net/')
 DATABASE_NAME = environ.get('DATABASE_NAME', 'Cluster0')
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'dreamcinezone_files')
 
@@ -149,7 +149,7 @@ MSG_ALRT = environ.get('MSG_ALRT', 'Share & Support Us ♥️')
 
 # IMDB Settings
 IMDB = is_enabled(environ.get('IMDB', "True"), False)
-LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False"), False)
+LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "True"), False)
 
 # Languages & Media Qualities Seasons
 LANGUAGES = {
@@ -180,8 +180,8 @@ BAD_WORDS = {
 # ==============================================================================
 # 6. MOVIE UPDATES & POSTER NOTIFICATIONS
 # ==============================================================================
-MOVIE_UPDATE_NOTIFICATION = is_enabled(environ.get('MOVIE_UPDATE_NOTIFICATION', "False"), False)
-MOVIE_UPDATE_CHANNEL = int(environ.get('MOVIE_UPDATE_CHANNEL', '-100'))
+MOVIE_UPDATE_NOTIFICATION = is_enabled(environ.get('MOVIE_UPDATE_NOTIFICATION', "True"), True)
+MOVIE_UPDATE_CHANNEL = int(environ.get('MOVIE_UPDATE_CHANNEL', '-1002372759576'))
 DREAMXBOTZ_IMAGE_FETCH = is_enabled(environ.get('DREAMXBOTZ_IMAGE_FETCH', "True"), True)
 LINK_PREVIEW = is_enabled(environ.get('LINK_PREVIEW', "False"), False)
 ABOVE_PREVIEW = is_enabled(environ.get('ABOVE_PREVIEW', "True"), True)
@@ -201,21 +201,21 @@ LOG_VR_CHANNEL = int(environ.get('LOG_VR_CHANNEL', '-100'))
 VERIFY_IMG = environ.get("VERIFY_IMG", "https://telegra.ph/file/9ecc5d6e4df5b83424896.jpg")
 
 # Tutorial Links
-TUTORIAL = environ.get("TUTORIAL", "https://t.me/dreamxbotz")
-TUTORIAL_2 = environ.get("TUTORIAL_2", "https://t.me/dreamxbotz")
-TUTORIAL_3 = environ.get("TUTORIAL_3", "https://t.me/dreamxbotz")
+TUTORIAL = environ.get("TUTORIAL", "https://t.me/how_to_download_moviesda/78")
+TUTORIAL_2 = environ.get("TUTORIAL_2", "https://t.me/how_to_download_moviesda/78")
+TUTORIAL_3 = environ.get("TUTORIAL_3", "https://t.me/how_to_download_moviesda/78")
 
 # Primary Shortener
-SHORTENER_WEBSITE = environ.get("SHORTENER_WEBSITE", "")
-SHORTENER_API = environ.get("SHORTENER_API", "")
+SHORTENER_WEBSITE = environ.get("SHORTENER_WEBSITE", "arolinks.com")
+SHORTENER_API = environ.get("SHORTENER_API", "6d26f83c2a0277380a91c8c2a9c6ea67bcdec0a6")
 
 # Secondary Shortener
-SHORTENER_WEBSITE2 = environ.get("SHORTENER_WEBSITE2", "")
-SHORTENER_API2 = environ.get("SHORTENER_API2", "")
+SHORTENER_WEBSITE2 = environ.get("SHORTENER_WEBSITE2", "arolinks.com")
+SHORTENER_API2 = environ.get("SHORTENER_API2", "6d26f83c2a0277380a91c8c2a9c6ea67bcdec0a6")
 
 # Tertiary Shortener
-SHORTENER_WEBSITE3 = environ.get("SHORTENER_WEBSITE3", "")
-SHORTENER_API3 = environ.get("SHORTENER_API3", "")
+SHORTENER_WEBSITE3 = environ.get("SHORTENER_WEBSITE3", "arolinks.com")
+SHORTENER_API3 = environ.get("SHORTENER_API3", "6d26f83c2a0277380a91c8c2a9c6ea67bcdec0a6")
 
 # Verification Time Gaps (in seconds)
 TWO_VERIFY_GAP = int(environ.get('TWO_VERIFY_GAP', "1200"))       # 20 minutes
@@ -225,7 +225,7 @@ THREE_VERIFY_GAP = int(environ.get('THREE_VERIFY_GAP', "54000"))   # 15 hours
 # ==============================================================================
 # 8. PREMIUM PLANS & PAYMENT CONFIGURATION
 # ==============================================================================
-QR_CODE = environ.get('QR_CODE', 'https://graph.org/file/e419f801841c2ee3db0fc.jpg')
+QR_CODE = environ.get('QR_CODE', '')
 OWNER_UPI_ID = environ.get('OWNER_UPI_ID', 'ɴᴏ ᴀᴠᴀɪʟᴀʙʟᴇ ʀɪɢʜᴛ ɴᴏᴡ')
 
 # Stars / Premium Pricing Structure {Amount: "Duration"}
@@ -242,7 +242,7 @@ STAR_PREMIUM_PLANS = {
 # 9. SERVER, STREAMING & WEB SETTINGS
 # ==============================================================================
 # Streaming Mode (Keep False on Render free tier to conserve bandwidth)
-STREAM_MODE = is_enabled(environ.get('STREAM_MODE', "False"), False)
+STREAM_MODE = is_enabled(environ.get('STREAM_MODE', "True"), True)
 PREMIUM_STREAM_MODE = is_enabled(environ.get('PREMIUM_STREAM_MODE', "False"), False)
 
 # Server Binding & Host Configuration
