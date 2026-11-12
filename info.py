@@ -262,9 +262,9 @@ HAS_SSL = is_enabled(getenv('HAS_SSL'), True)
 
 # Public URL construction
 if HAS_SSL:
-    URL = f"https://{FQDN}/"
+    URL = f"https://hq-moviesda.onrender.com{FQDN}/"
 else:
-    URL = f"http://{FQDN}/" if NO_PORT else f"http://{FQDN}:{PORT}/"
+    URL = f"https://hq-moviesda.onrender.com{FQDN}/" if NO_PORT else f"https://hq-moviesda.onrender.com{FQDN}:{PORT}/"
 
 # Operational Performance Parameters
 WORKERS = int(environ.get('WORKERS', '4'))
